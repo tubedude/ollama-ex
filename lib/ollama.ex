@@ -849,9 +849,9 @@ defmodule Ollama do
       doc: "The name of the model used to generate the embeddings.",
     ],
     prompt: [
-      type: :string,
+      type: {:or, [:string, {:list, :string}]},
       required: true,
-      doc: "The prompt used to generate the embedding.",
+      doc: "The text or list of texts to generate embeddings for.",
     ],
     keep_alive: [
       type: {:or, [:integer, :string]},
